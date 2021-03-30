@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eversonelias.dscatalog.entities.Category;
+import com.eversonelias.dscatalog.dto.CategoryDTO;
 import com.eversonelias.dscatalog.services.CategoryService;
 
 @RestController // Annotation is a simple way of configuring a REST controller. It is a preprocessor orientation.
@@ -23,8 +23,8 @@ public class CategoryResource { // Everytime a resource is related to an entity,
 	private CategoryService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Category>> findAll() {
-		List<Category> list = service.findAll();
+	public ResponseEntity<List<CategoryDTO>> findAll() {
+		List<CategoryDTO> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
